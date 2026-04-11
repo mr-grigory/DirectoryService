@@ -6,8 +6,8 @@ namespace DirectoryService.Domain.Departments;
 
 public record DepartmentName
 {
-    public const int MaxLength = 150;
-    public const int MinLength = 3;
+    public const byte MAX_LENGTH = 150;
+    public const byte MIN_LENGTH = 3;
     public string Value { get; private set; }
 
     private DepartmentName(string value)
@@ -30,11 +30,11 @@ public record DepartmentName
                 "Name");
         }
 
-        if (value.Length > MaxLength || value.Length < MinLength)
+        if (value.Length > MAX_LENGTH || value.Length < MIN_LENGTH)
         {
             return Error.Validation(
                 "department.name",
-                $"Name  must be between {MinLength} and {MaxLength} characters",
+                $"Name  must be between {MIN_LENGTH} and {MAX_LENGTH} characters",
                 "Name");
         }
         

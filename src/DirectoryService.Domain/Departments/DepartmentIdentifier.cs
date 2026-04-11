@@ -6,8 +6,8 @@ namespace DirectoryService.Domain.Departments;
 
 public record DepartmentIdentifier
 {
-    public const int MaxLength = 150;
-    public const int MinLength = 3;
+    public const byte MAX_LENGTH = 150;
+    public const byte MIN_LENGTH = 3;
     public string Value { get; private set; }
 
     private DepartmentIdentifier(string value)
@@ -32,11 +32,11 @@ public record DepartmentIdentifier
                 "Identifier");
         }
 
-        if (value.Length > MaxLength || value.Length < MinLength)
+        if (value.Length > MAX_LENGTH || value.Length < MIN_LENGTH)
         {
             return Error.Validation(
                 "department.identifier",
-                $"Identifier  must be between {MinLength} and {MaxLength} characters",
+                $"Identifier  must be between {MIN_LENGTH} and {MAX_LENGTH} characters",
                 "Identifier");
         }
 

@@ -1,10 +1,10 @@
-﻿using System.Text.RegularExpressions;
-using CSharpFunctionalExtensions;
-using DirectoryService.Domain.ValueObjects;
-using MrGrigory.MyUtils;
+﻿using DirectoryService.Domain.ValueObjects;
 
 namespace DirectoryService.Domain.Departments;
 
+/// <summary>
+/// Подразделение - это какая-то часть компании, её отдел, которая отвечает за свои функции. Например отдел кадров, команда поддержки, филиал в каком-то городе.
+/// </summary>
 public class Department
 {
     public Guid Id { get; }
